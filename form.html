@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, sans-serif;
+            background-color: Pink;            
+        }
+                         
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: Black;
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: Black;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid Black;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+            width: auto;
+        }
+        
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+        
+        .radio-group label,
+        .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 20px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: Green;
+            color: Black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: Black;
+        }
+        
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body style="text-align; center:">
+    <div class="form-container">
+        <h2>Student Registration Form</h2>
+        <form action="#" method="POST" novalidate>
+           
+ <hr>
+                <h1>Personal Information</h1>
+                
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                            
+                <label for="Age">Age:</label>
+                <input type="text" id="Age" name="Age" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            <hr> 
+                <div class="radio-group">
+                    <h1>Gender:</h1><br>
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female" required>
+                    <label for="female">Female</label> 
+                    
+                </div>
+            <hr>
+            <tr>                    <td><label> What are your Hobbies (select all that apply):</label></td>
+                    <td>
+                        <div class="checkbox-row">
+                            <label><input type="checkbox" name="interests" value="Playing Sports">Playing Mobile Games</label>
+                            <label><input type="checkbox" name="interests" value="Arts">Playing Sports</label>
+                            <label><input type="checkbox" name="interests" value="Music">Listening to Music</label>
+                            <label><input type="checkbox" name="interests" value="Dancing">Dancing</label>
+                            <label><input type="checkbox" name="interests" value="Singing">Singing</label>
+                            <label><input type="checkbox" name="interests" value="Play Mobile Games">Reading</label>
+                        </div>
+                    </td>
+                </tr>            
+            
+            <hr>
+                <h1>Academic Information</h1>
+                
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" required>
+                
+                <label for="course">Course/Program:</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="Bachelor of Industrial Technology">Bachelor of Industrial Technology</option>
+                    <option value="Bachelor of Science in Education">Bachelor of Science in Education</option>
+                    <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
+                    <option value="Bachelor of Science in Hospitality Management">Bachelor of Science in Hospitality Management</option>
+                    <option value="Bachelor of Science in Civil Engineering">Bachelor of Science in Civil Engineering</option>
+                </select>
+                
+                <label for="year">Year of Study:</label>
+                <select id="year" name="year" required>
+                    <option value="">Select year</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+            </hr>
+            
+            <hr>
+                <h1>Other Information Incase of Emergency</h1>
+                
+                <label for="Current Address"> Current Address:</label>
+                <textarea id="address" name="address" rows="2" required></textarea>
+                
+                <label for="Present Address">Present Address:</label>
+                <input type="text" id="city" name="city" required>
+            </hr>
+            
+            <label for="emergencyContact">Emergency Contact Name:</label>
+            <input type="text" id="emergencyContact" name="emergencyContact" required>
+            
+            <label for="emergency contact"> Emergency Contact Number:</label>
+            <input type="text" id="emergency contact" name="emergencycontact" required>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
