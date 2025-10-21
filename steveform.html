@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, sans-serif;
+            background-color: Pink; 
+            text-align: center;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: block;
+        }
+        
+        .success-message {
+            display: none; 
+            background-color: Skyblue;
+            color: Black;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid Pink;
+            margin: 20px auto;
+            max-width: 600px;
+            font-size:  20;
+        }
+        
+        .loading {
+            display: none;
+            font-size: 18px;
+            color: Green;
+            margin: 10px 0;
+        }
+                         
+        h1, h2 {
+            color: Black;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            margin: 20px 0;
+            border: 1px solid Black;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: Black;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid Black;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+            width: auto;
+        }
+        
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+        
+        .radio-group label,
+        .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 20px;
+        }
+        
+        .checkbox-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .checkbox-row label {
+            flex: 1 1 45%;
+            margin: 0;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: Green;
+            color: Black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: Black;
+            color: Gray;
+        }
+        
+        .reset-btn {
+            background-color: Pink;
+            color: Black;
+            margin-top: 10px;
+        }
+        
+        .reset-btn:hover {
+            background-color: Black;
+            color: Pink;
+        }
+        
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="formContainer">
+        <h2>Student Registration Form</h2>
+        <form id="registrationForm" action="#" method="POST" novalidate>
+            <hr>
+            <h1>Personal Information</h1>
+            
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+                        
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <hr>
+            <div class="radio-group">
+                <h1>Gender:</h1><br>
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" required>
+                <label for="female">Female</label>
+            </div>
+            
+            <hr>
+            <h1>Hobbies (select all that apply):</h1>
+            <div class="checkbox-group">
+                <div class="checkbox-row">
+                    <label><input type="checkbox" name="hobbies" value="Playing Mobile Games">Playing Mobile Games</label>
+                    <label><input type="checkbox" name="hobbies" value="Playing Sports">Playing Sports</label>
+                    <label><input type="checkbox" name="hobbies" value="Listening to Music">Listening to Music</label>
+                    <label><input type="checkbox" name="hobbies" value="Dancing">Dancing</label>
+                    <label><input type="checkbox" name="hobbies" value="Singing">Singing</label>
+                    <label><input type="checkbox" name="hobbies" value="Reading">Reading</label>
+                </div>
+            </div>
+            
+            <hr>
+            <h1>Academic Information</h1>
+            
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" name="studentId" required>
+            
+            <label for="course">Course/Program:</label>
+            <select id="course" name="course" required>
+                <option value="">Select a course</option>
+                <option value="Bachelor of Industrial Technology">Bachelor of Industrial Technology</option>
+                <option value="Bachelor of Science in Education">Bachelor of Science in Education</option>
+                <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
+                <option value="Bachelor of Science in Hospitality Management">Bachelor of Science in Hospitality Management</option>
+                <option value="Bachelor of Science in Civil Engineering">Bachelor of Science in Civil Engineering</option>
+            </select>
+            
+            <label for="year">Year of Study:</label>
+            <select id="year" name="year" required>
+                <option value="">Select year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+            
+            <hr>
+            <h1>Other Information (In Case of Emergency)</h1>
+            
+            <label for="currentAddress">Current Address:</label>
+            <textarea id="currentAddress" name="currentAddress" rows="2" required></textarea>
+            
+            <label for="presentAddress">Present Address:</label>
+            <input type="text" id="presentAddress" name="presentAddress" required>
+            
+            <label for="emergencyContact">Emergency Contact Name:</label>
+            <input type="text" id="emergencyContact" name="emergencyContact" required>
+            
+            <label for="emergencyContactNumber">Emergency Contact Number:</label>
+            <input type="tel" id="emergencyContactNumber" name="emergencyContactNumber" required>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    
+    <div class="loading" id="loading">Processing your registration...</div>
+    
+    <div class="success-message" id="successMessage">
+        <h2>Registration Complete!</h2>
+        <p>Thank you for registering. Here is a summary of your details:</p>
+        <div id="summary"></div>
+        <button class="reset-btn" onclick="resetForm()">Register Another Student</button>
+    </div>
+    
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Basic validation
+            const requiredFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = 'red';
+                } else {
+                    field.style.borderColor = 'Black';
+                }
+            });
+            
+            if (!isValid) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('formContainer').style.display = 'none';
+            
+            // Simulate processing delay (e.g., for backend call)
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                
+                // Generate summary
+                const formData = new FormData(event.target);
+                let summary = '<ul>';
+                for (let [key, value] of formData.entries()) {
+                    if (key === 'hobbies') {
+                        summary += '<li>Hobbies: ' + Array.from(formData.getAll('hobbies')).join(', ') + '</li>';
+                        break; // Handle multiple hobbies once
+                    } else if (key !== 'terms') { // Skip terms checkbox
+                        summary += '<li>' + key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()) + ': ' + value + '</li>';
+                    }
+                }
+                summary += '</ul>';
+                document.getElementById('summary').innerHTML = summary;
+                
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+            }, 2000); // 2-second delay for demo
+        });
+        
+        function resetForm() {
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('formContainer').style.display = 'block';
+            document.getElementById('registrationForm').reset();
+        }
+    </script>
+</body>
+</html>
